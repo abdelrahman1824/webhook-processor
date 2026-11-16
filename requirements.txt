@@ -1,0 +1,5 @@
+#Installed dependencies
+
+fastapi[standard]==0.163.1
+
+SQLAlchemy==2.1.8
