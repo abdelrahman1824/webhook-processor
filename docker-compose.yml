@@ -1,0 +1,18 @@
+services:
+  webhook-processor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: webhook-processor-api
+
+    ports: 
+      - "8000:8000"
+
+    volumes:
+      - data:/webhook-processor/data
+
+    restart: unless-stopped
+  
+volumes:
+  data:
