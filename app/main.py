@@ -85,6 +85,7 @@ def show_alerts(db: Session = Depends(get_db)):
         "alert_id": alert.alert_id,
         "event_id": alert.event_id,
         "source": alert.source,
+        "owner_email": alert.owner_email,
         "message": alert.message,
         "timestamp": alert.timestamp
     } for alert in alerts]
