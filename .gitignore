@@ -1,5 +1,2 @@
 .env
 app/__pycache__/
-data.db
-tests
-secrets
