@@ -6,11 +6,15 @@ services:
 
     container_name: webhook-processor-api
 
+    environment:
+      gmail_token_file: /webhook-processor/secrets/token.json
+
     ports: 
       - "8000:8000"
 
     volumes:
       - data:/webhook-processor/data
+      - ./secrets:/webhook-processor/secrets
 
     restart: unless-stopped
   
