@@ -33,8 +33,8 @@ def get_credentials():
         credentials.refresh(Request())
 
         temporary_file = token_file.with_suffix(".tmp")
-        token_file.write_text(credentials.to_json(),
-                              encoding = 'utf-8')
+        with temporary_file.open('w', encoding = 'utf-8') as file:
+            file.write(credentials.to_json())
         temporary_file.replace(token_file)
 
     if not credentials.valid:
